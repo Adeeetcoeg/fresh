@@ -4,6 +4,14 @@
     Dashboard
 @endsection
 
+@section('css')
+
+@endsection
+
+@section('js')
+
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -17,14 +25,10 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+
                         @role('admin')
-                            <p>Halaman Admin</p>
+                            Data Laporan Admin {{ \Laratrust::hasRole('admin') }}
                         @endrole
-
-                        @role('member')
-                            <p>Halaman Member</p>
-                        @endrole
-
                     </div>
                 </div>
             </div>

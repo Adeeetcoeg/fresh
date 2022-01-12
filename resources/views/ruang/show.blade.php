@@ -7,12 +7,13 @@
                 <div class="card">
                     <div class="card-header">Data Ruangan</div>
                     <div class="card-body">
-                        <form action="{{ route('ruang.store') }}" method="post">
+                        <form action="{{ route('ruang.update', $ruang->id) }}" method="post">
                             @csrf
+                            @method('put')
                             <div class="form-group">
-                                <label for="">Masukan Keterangan</label>
-                                <input type="text" name="keterangan"
-                                    class="form-control @error('keterangan') is-invalid @enderror">
+                                <label for=""> Keterangan</label>
+                                <input type="text" name="keterangan" value="{{ $ruang->keterangan }}"
+                                    class="form-control @error('keterangan') is-invalid @enderror" disabled>
                                 @error('keterangan')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -20,8 +21,8 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <button type="reset" class="btn btn-outline-warning">Reset</button>
-                                <button type="submit" class="btn btn-outline-primary">Simpan</button>
+
+                                <a href="{{ route('jadwal.index') }}" class="btn btn-block btn-primary">Kembali</a>
                             </div>
                         </form>
                     </div>
@@ -29,12 +30,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('css')
-
-@endsection
-
-@section('js')
-
 @endsection

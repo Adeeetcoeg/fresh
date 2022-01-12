@@ -5,15 +5,15 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Data Ruangan</div>
+                    <div class="card-header">Data Spesialis</div>
                     <div class="card-body">
-                        <form action="{{ route('ruang.store') }}" method="post">
+                        <form action="{{ route('spesialis.store') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label for="">Masukan Keterangan</label>
-                                <input type="text" name="keterangan"
-                                    class="form-control @error('keterangan') is-invalid @enderror">
-                                @error('keterangan')
+                                <label for="">Masukan Nama spesialis</label>
+                                <input type="text" name="spesialis"
+                                    class="form-control @error('spesialis') is-invalid @enderror">
+                                @error('spesialis')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
